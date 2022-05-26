@@ -27,6 +27,7 @@ Data.getOneItem = async(req, res) => {
 Data.deleteAnItem = async(req, res) => {
   const id = req.params.id;
   await ItemModel.findByIdAndDelete(id)
+  console.log('this is coming through')
   res.status(200).send('item deleted')
 } 
 

@@ -3,7 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const Data = require('./data');
-
+const PORT = process.env.PORT || 3002;
 const app = express();
 
 app.use(cors());
@@ -29,6 +29,6 @@ app.use( (error,req,res,next) => {
 module.exports = {
   server: app,
   start: (port) => {
-    app.listen(port, console.log(`Server is up and running on port: ${port}`));
+    app.listen(port, console.log(`Server is up and running on port: ${PORT}`));
   },
 };
